@@ -515,8 +515,8 @@ private:
 			throw std::runtime_error(LOCATION "missing required vulkan extension!");
 
 		const auto layers = getRequiredLayers();
-		//if (!checkRequiredLayersPresent(layers))
-		//	throw std::runtime_error(LOCATION "missing required vulkan layers!");
+		if (!checkRequiredLayersPresent(layers))
+			throw std::runtime_error(LOCATION "missing required vulkan layers!");
 
 		VkApplicationInfo appInfo = {};
 		appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
