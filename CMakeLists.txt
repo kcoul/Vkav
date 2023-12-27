@@ -172,6 +172,12 @@ add_executable(vkav
 	src/Data.cpp
 	src/Calculate.cpp
 )
+
+set_target_properties(vkav PROPERTIES
+		BUILD_RPATH "@executable_path"
+		INSTALL_RPATH "@executable_path"
+)
+
 target_include_directories(vkav
 	PRIVATE
 		include
