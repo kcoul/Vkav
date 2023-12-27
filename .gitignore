@@ -35,3 +35,9 @@ build
 # Executables
 *.exe
 *.out
+
+
+.idea
+cmake-build-*
+.DS_Store
+MacOS/Vkav.app/*

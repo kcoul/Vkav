@@ -221,6 +221,8 @@ if (NOT DEFINED GLSLC_PATH)
 	endif()
 endif()
 
+
+# Causes this bug: https://gitlab.kitware.com/cmake/cmake/-/issues/20181
 add_custom_target(shaders)
 function(add_module MODULE STAGES)
 	string(REPLACE " " "_" MODULE_NAME "${MODULE}")

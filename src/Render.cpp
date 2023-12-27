@@ -515,8 +515,8 @@ private:
 			throw std::runtime_error(LOCATION "missing required vulkan extension!");
 
 		const auto layers = getRequiredLayers();
-		if (!checkRequiredLayersPresent(layers))
-			throw std::runtime_error(LOCATION "missing required vulkan layers!");
+		//if (!checkRequiredLayersPresent(layers))
+		//	throw std::runtime_error(LOCATION "missing required vulkan layers!");
 
 		VkApplicationInfo appInfo = {};
 		appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
@@ -527,6 +527,7 @@ private:
 		appInfo.apiVersion = VK_API_VERSION_1_0;
 
 		VkInstanceCreateInfo instanceInfo = {};
+		instanceInfo.flags |= VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR;
 		instanceInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
 		instanceInfo.pApplicationInfo = &appInfo;
 		instanceInfo.enabledExtensionCount = static_cast<uint32_t>(extensions.size());
@@ -534,7 +535,9 @@ private:
 		instanceInfo.enabledLayerCount = static_cast<uint32_t>(layers.size());
 		instanceInfo.ppEnabledLayerNames = layers.data();
 
-		if (vkCreateInstance(&instanceInfo, nullptr, &instance) != VK_SUCCESS)
+		int ret = vkCreateInstance(&instanceInfo, nullptr, &instance);
+
+		if (ret != VK_SUCCESS)
 			throw std::runtime_error(LOCATION "failed to create a vulkan instance!");
 	}
 
@@ -549,6 +552,8 @@ private:
 			extensions.reserve(extensions.size() + 1);
 			extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
 		}
+
+		extensions.emplace_back(VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME);
 
 		return extensions;
 	}
