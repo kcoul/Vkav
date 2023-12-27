@@ -537,6 +537,12 @@ private:
 
 		int ret = vkCreateInstance(&instanceInfo, nullptr, &instance);
 
+
+		if (ret == VkResult::VK_ERROR_LAYER_NOT_PRESENT)
+		{
+			std::cout << "At least one needed layer not preset" << std::endl;
+		}
+
 		if (ret != VK_SUCCESS)
 			throw std::runtime_error(LOCATION "failed to create a vulkan instance!");
 	}
@@ -575,7 +581,7 @@ private:
 
 	std::vector<const char*> getRequiredLayers() const {
 		if constexpr (enableValidationLayers)
-			return {"VK_LAYER_LUNARG_standard_validation"};
+			return {"VK_LAYER_KHRONOS_validation"}; //Use VK_LAYER_LUNARG_standard_validation for older SDK versions
 		else
 			return {};
 	}
