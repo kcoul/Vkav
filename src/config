@@ -35,7 +35,7 @@ sinkName = auto
 sampleSize = 64
 
 /**
- * Size of the buffer that will be used for proccessing and shaders.
+ * Size of the buffer that will be used for processing and shaders.
  * Must be a power of 2 and divisible by sample size.
  */
 bufferSize = 2048
@@ -43,7 +43,7 @@ bufferSize = 2048
 /**
  * Rate at which the program samples audio.
  */
-sampleRate = 5625
+sampleRate = 44100
 
 /**
  * Number of audio channels. Supported values are 1 and 2.
