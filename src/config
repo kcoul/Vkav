@@ -8,7 +8,7 @@
  * Linux: /etc/vkav/modules, ~/.config/vkav/modules
  * MacOS: Vkav.app/Contents/Resources/modules, ~/Library/Preferences/vkav/modules
  */
-modules = {"bars", "radial"}
+modules = {"bars", "bars-left", "bars-top", "bars-right", "radial"}
 
 /**
  * Path to an image, which is sent to the fragment shaders. Set to none to disable.
