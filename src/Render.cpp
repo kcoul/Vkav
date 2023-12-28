@@ -483,6 +483,9 @@ private:
 		if (settings.window.position)
 			glfwSetWindowPos(window, settings.window.position->first,
 			                 settings.window.position->second);
+
+		//TODO: Make this real-time controllable
+		//glfwSetWindowOpacity(window, 0.5f);
 	}
 
 	void initVulkan() {

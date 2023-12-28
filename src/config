@@ -22,7 +22,7 @@ backgroundImage = none
 /**
  *
  */
-amplitude = 0.4
+amplitude = 0.9
 
 /**
  * Name of the audio source to sample.
@@ -79,7 +79,7 @@ trebleCut = 0.09
  * 	Vulkan uses Vulkan transparency.
  * 	Opaque makes the window fully opaque.
  */
-transparency = Opaque
+transparency = Vulkan
 
 /**
  * Dimensions of the window

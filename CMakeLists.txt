@@ -221,7 +221,12 @@ endif()
 # compile modules
 if (NOT DEFINED GLSLC_PATH)
 	if (DEFINED VULKAN_SDK_PATH)
-		set(GLSLC_PATH ${VULKAN_SDK_PATH}/x86_64/bin/glslc)
+		#TODO: FIXME: This logic probably needs even more work
+		if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+			set(GLSLC_PATH ${VULKAN_SDK_PATH}/macOS/bin/glslc)
+		else()
+			set(GLSLC_PATH ${VULKAN_SDK_PATH}/x86_64/bin/glslc)
+		endif()
 	else()
 		set(GLSLC_PATH glslc)
 	endif()

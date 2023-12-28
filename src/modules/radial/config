@@ -1,12 +1,12 @@
 
 [parameters]
 
-(id=11) int originalRadius = 128
+(id=11) int originalRadius = 256
 (id=12) int centerLineWidth = 2
 
 (id=13) float barWidth = 3.5
 
-(id=14) int numBars = 180
+(id=14) int numBars = 360
 
 (id=15) float amplitude = 1000.0
 

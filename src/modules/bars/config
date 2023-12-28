@@ -6,7 +6,7 @@
 
 (id=13) float amplitude = 1
 
-(id=14) float brightnessSensitivity = 1
+(id=14) float brightnessSensitivity = 5
 
 (id=15) float red = 0.196
 (id=16) float green = 0.196
