@@ -48,7 +48,7 @@ sampleRate = 44100
 /**
  * Number of audio channels. Supported values are 1 and 2.
  */
-channels = 2
+channels = 1
 
 /**
  * Framerate limiter. Set to 0 to enable VSync and -1 to disable the fps limiter.
