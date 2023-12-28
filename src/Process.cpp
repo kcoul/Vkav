@@ -151,6 +151,9 @@ private:
 		    std::accumulate(audioData.lBuffer, audioData.lBuffer + inputSize / 2, 0.f) / inputSize;
 		audioData.rVolume =
 		    std::accumulate(audioData.rBuffer, audioData.rBuffer + inputSize / 2, 0.f) / inputSize;
+
+		audioData.lVolume *= 1000.0f;
+		audioData.rVolume *= 1000.0f;
 	}
 
 	/**

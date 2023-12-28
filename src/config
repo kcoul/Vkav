@@ -36,7 +36,7 @@ sampleSize = 64
 
 /**
  * Size of the buffer that will be used for processing and shaders.
- * Must be a power of 2 and divisible by sample size.
+ * Must be a power of 2 and a multiple of sample size.
  */
 bufferSize = 2048
 
@@ -51,7 +51,7 @@ sampleRate = 44100
 channels = 1
 
 /**
- * Framerate limiter. Set to 0 to enable VSync and -1 to disable the fps limiter.
+ * Frame rate limiter. Set to 0 to enable VSync and -1 to disable the fps limiter.
  */
 fpsLimit = 0
 
