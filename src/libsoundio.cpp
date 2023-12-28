@@ -133,6 +133,9 @@ private:
 			}
 		}
 
+		if (!layout) //Try default layout (probably only accepts stereo and not mono)
+			layout = device->layouts;
+
 		if (!layout)
 			throw std::runtime_error(LOCATION
 			                         "Selected device does not support the chosen channel layout!");
